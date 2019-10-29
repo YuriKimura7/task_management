@@ -16,6 +16,10 @@ class TaskManagementsController < ApplicationController
     end
   end
 
+  def show
+    @task_management = TaskManagement.find(params[:id])
+  end
+
   private
   def task_management_params
     params.require(:task_management).permit(:title, :deadline, :memo)

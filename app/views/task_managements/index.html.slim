@@ -11,5 +11,5 @@ table
   tbody
     - @task_managements.each do |task|
       tr
-        td = task.title
+        td = link_to task.title, task_management_path(task)
         td = task.deadline
