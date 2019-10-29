@@ -10,4 +10,4 @@ table
       td = @task_management.deadline
     tr
       th メモ
-      td = @task_management.memo
+      td = simple_format(@task_management.memo)
