@@ -20,6 +20,19 @@ class TaskManagementsController < ApplicationController
     @task_management = TaskManagement.find(params[:id])
   end
 
+  def edit
+    @task_management = TaskManagement.find(params[:id])
+  end
+
+  def update
+    @task_management = TaskManagement.find(params[:id])
+    if @task_management.update(task_management_params)
+      redirect_to task_management_path, notice: "更新しました"
+    else
+      render "edit"
+    end
+  end
+
   private
   def task_management_params
     params.require(:task_management).permit(:title, :deadline, :memo)

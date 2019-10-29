@@ -1,0 +1,16 @@
+= form_for @task_management do |f|
+  - if @task_management.errors.any?
+    ul
+      - @task_management.errors.full_messages.each do |message|
+        li = message
+
+  = f.submit submit
+  p
+  = f.label :title, "タイトル"
+  = f.text_field :title
+  p
+  = f.label :deadline, "期日"
+  = f.text_field :deadline
+  p
+  = f.label :memo, "メモ"
+  = f.text_area :memo

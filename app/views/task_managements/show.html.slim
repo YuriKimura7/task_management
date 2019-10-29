@@ -1,4 +1,5 @@
-h1 詳細一覧
+= notice
+h2 詳細
 
 table
   thead
@@ -11,3 +12,4 @@ table
     tr
       th メモ
       td = simple_format(@task_management.memo)
+= link_to "編集", edit_task_management_path

@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  resources :task_managements, except: [:edit, :update, :destroy]
+  resources :task_managements, except: [:destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
