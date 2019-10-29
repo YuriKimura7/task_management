@@ -1,4 +1,9 @@
 = form_for @task_management do |f|
+  -if @task_management.errors.any?
+  ul
+    - @task_management.errors.full_messages.each do |message|
+      li = message
+
   = f.submit "課題登録"
   p
   = f.label :title, "タイトル"
