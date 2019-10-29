@@ -1,0 +1,11 @@
+= form_for @task_management do |f|
+  = f.submit "課題登録"
+  p
+  = f.label :title, "タイトル"
+  = f.text_field :title
+  p
+  = f.label :deadline, "期日"
+  = f.text_field :deadline
+  p
+  = f.label :memo, "メモ"
+  = f.text_field :memo
