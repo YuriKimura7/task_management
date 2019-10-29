@@ -12,4 +12,7 @@ table
     tr
       th メモ
       td = simple_format(@task_management.memo)
+    tr
+      th ステータス
+      td = @task_management.status
 = link_to "編集", edit_task_management_path
