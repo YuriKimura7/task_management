@@ -35,6 +35,6 @@ class TaskManagementsController < ApplicationController
 
   private
   def task_management_params
-    params.require(:task_management).permit(:title, :deadline, :memo)
+    params.require(:task_management).permit(:title, :deadline, :memo, :status)
   end
 end

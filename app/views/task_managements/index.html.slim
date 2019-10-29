@@ -7,9 +7,11 @@ table
     tr
       th タイトル
       th 期日
+      th ステータス
 
   tbody
     - @task_managements.each do |task|
       tr
         td = link_to task.title, task_management_path(task)
         td = task.deadline
+        td = task.status
