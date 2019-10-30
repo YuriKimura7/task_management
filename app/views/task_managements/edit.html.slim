@@ -1,3 +1,9 @@
 h2　課題編集
-
-= render partial: "form", locals: { submit: "更新" }
+= form_for @task_management do |f|
+  = f.submit "更新"
+  p
+  = render partial: "form", locals: { f: f }
+  - if request.path_info == edit_task_management_path
+    p
+    = f.label :status, "ステータス"
+    = f.select :status, TaskManagement.statuses_i18n.invert

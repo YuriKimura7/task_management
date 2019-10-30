@@ -14,5 +14,5 @@ table
       td = simple_format(@task_management.memo)
     tr
       th ステータス
-      td = @task_management.status
+      td = @task_management.status_i18n
 = link_to "編集", edit_task_management_path
