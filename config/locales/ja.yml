@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    models:
+    attributes:
+      task_management:
+        title: タイトル
+        deadline: 期日
+        status: ステータス
+
+  enums:
+    task_management:
+      status:
+        backlog: 未着手
+        wip: 着手中
+        closed: 完了
