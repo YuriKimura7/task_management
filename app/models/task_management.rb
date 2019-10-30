@@ -6,8 +6,8 @@ class TaskManagement < ApplicationRecord
   validate :check_status
 
   def check_status
-    if status == "wip"
-      if TaskManagement.where(status: "wip").count >= 1
+    if status == "wip" && TaskManagement.where(status: "wip").count >= 1
+      unless status == "wip"
         errors.add(:status, "は着手中です")
       end
     end
