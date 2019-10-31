@@ -1,6 +1,8 @@
 class TaskManagementsController < ApplicationController
   def index
     @task_managements = TaskManagement.all
+    @task_managements = @task_managements.where(title: params[:search_title]) if params[:search_title].present?
+    @task_managements = @task_managements.where(status: params[:search_status]) if params[:search_status].present?
   end
 
   def new
