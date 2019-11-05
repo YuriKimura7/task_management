@@ -35,6 +35,13 @@ class TaskManagementsController < ApplicationController
     end
   end
 
+  def status_update
+    @task_management = TaskManagement.find(params[:id])
+    if @task_management.update(status: params[:status])
+      redirect_to task_managements_path
+    end
+  end
+
   private
   def task_management_params
     params.require(:task_management).permit(:title, :deadline, :memo, :status)
