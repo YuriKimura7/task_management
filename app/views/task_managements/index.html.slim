@@ -16,6 +16,7 @@ table
       th ステータス変更
       th タイトル
       th 期日
+      th 状況
       th ステータス
 
   tbody
@@ -31,4 +32,6 @@ table
               = f.submit "完了"
         td = link_to task.title, task_management_path(task)
         td = task.deadline
+        td = "期限切れ" if task.deadline.past?
+
         td = task.status_i18n
