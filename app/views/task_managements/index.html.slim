@@ -23,10 +23,10 @@ table
       tr
         td
           = form_with url: status_update_task_management_path(task) do |f|
-            - if task.status == "backlog"
+            - if task.backlog?
               = f.hidden_field :status, value: "wip"
               = f.submit "着手"
-            - elsif task.status == "wip"
+            - elsif task.wip?
               = f.hidden_field :status, value: "closed"
               = f.submit "完了"
         td = link_to task.title, task_management_path(task)
