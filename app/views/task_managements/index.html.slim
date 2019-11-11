@@ -16,12 +16,13 @@ table
       th ステータス変更
       th タイトル
       th 期日
-      th 状況
+      th 残日数
       th ステータス
 
   tbody
     - @task_managements.each do |task|
       tr
+
         td
           = form_with url: status_update_task_management_path(task) do |f|
             - if task.backlog?
@@ -32,5 +33,9 @@ table
               = f.submit "完了"
         td = link_to task.title, task_management_path(task)
         td = task.deadline
-        td = "期限切れ" if task.deadline < Date.today
+        td
+          .expired
+            = "期限切れ" if task.deadline < Date.today
+          .days
+            = "#{(task.deadline - Date.today).to_i} 日" if task.deadline >= Date.today
         td = task.status_i18n
